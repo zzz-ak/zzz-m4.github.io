@@ -1,3 +1,4 @@
+2561515003: 09-14 23:05:17
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -17,54 +18,67 @@
             color:#333;
         }
 
-        /* 校门背景使用在线图片 */
+        /* 顶部横幅：去掉校门照片，改成柔和渐变背景 */
         .banner{
             width:100%;
             min-height:60vh;
-            background:
-                linear-gradient(rgba(25,40,65,.55), rgba(44,66,96,.65)),
-                url("https://img1.baidu.com/it/u=1261240104,3041402031&fm=253&fmt=auto&app=138&f=JPEG?w=1920&h=1080") center/cover no-repeat;
+            background:linear-gradient(135deg,#ffe2f2 0%,#c9e4ff 50%,#d7f0ff 100%);
             display:flex;
             flex-direction:column;
             justify-content:center;
             align-items:center;
-            color:#fff;
+            color:#334155;
             text-align:center;
             padding:40px 20px;
             position:relative;
-        }
-
-        /* 左上角校徽在线图，清晰度更高 */
-        .logo{
-            position:absolute;
-            top:18px;
-            left:18px;
-            width:56px;
-            height:56px;
-            border-radius:50%;
-            border:2px solid #fff;
             overflow:hidden;
-            background:#fff;
-            box-shadow:0 2px 10px rgba(0,0,0,.2);
         }
 
-        .logo img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            display:block;
+        /* 柔和装饰光斑，纯CSS生成，不使用图片 */
+        .banner::before,
+        .banner::after{
+            content:"";
+            position:absolute;
+            border-radius:50%;
+            filter:blur(80px);
+            opacity:.45;
+            z-index:0;
+        }
+
+        .banner::before{
+            width:300px;
+            height:300px;
+            background:#ffc6e5;
+            top:-80px;
+            left:-60px;
+        }
+
+        .banner::after{
+            width:260px;
+            height:260px;
+            background:#a8d8ff;
+            bottom:-70px;
+            right:-40px;
+        }
+
+        .banner h1,
+        .banner p{
+            position:relative;
+            z-index:1;
         }
 
         .banner h1{
             font-size:42px;
             margin-bottom:15px;
+            color:#192841;
         }
 
         .banner p{
             font-size:18px;
-            opacity:0.95;
+            opacity:0.9;
             max-width:700px;
             line-height:1.8;
+            color:#334155;
         }
 
         /* 主体容器 */
@@ -73,8 +87,10 @@
             margin:-60px auto 60px;
             background:#fff;
             border-radius:16px;
-            box-shadow:0 4px 20px rgba(0,0,0,.12);
+            box-shadow:0 4px 20px rgba(0,0,0,.08);
             padding:40px;
+            position:relative;
+            z-index:2;
         }
 
         /* 欢迎板块 */
@@ -142,7 +158,7 @@
             background:#2c4260;
         }
 
-        /* 中间下方新增赛氪入口 */
+        /* 中间下方赛氪入口 */
         .middle-entry{
             margin-top:30px;
             text-align:center;
@@ -187,27 +203,19 @@
 
             .banner p{
                 font-size:16px;
-            }
+        
 
-            .container{
-                margin:0 15px;
-                padding:25px;
-            }
-
-            .logo{
-                width:44px;
-                height:44px;
-                top:12px;
-                left:12px;
+2561515003: 09-14 23:05:38
+}
+             .container{
+                 margin:0 15px;
+                 padding:25px;
              }
          }
      </style>
  </head>
  <body>
      <div class="banner">
-         <div class="logo">
-             <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/8/81/Wuhan_University_of_Science_and_Technology_Logo.svg/1200px-Wuhan_University_of_Science_and_Technology_Logo.svg.png" alt="校徽">
-         </div>
          <h1>欢迎加入武汉科技大学</h1>
          <p>新的旅程，新的起点<br>愿你在武科大，奔赴热爱，闪闪发光</p>
      </div>
@@ -242,4 +250,4 @@
          WUST 迎新简易平台 · 新生专属导航网站
      </footer>
  </body>
- </html> 
+ </html>
